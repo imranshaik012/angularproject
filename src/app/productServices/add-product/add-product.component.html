@@ -1,0 +1,14 @@
+<h2>Add Product</h2>
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+  <label for="title">Title:</label>
+  <input id="title" name="title" ngModel required />
+  <br />
+  <label for="category">Category:</label>
+  <input id="category" name="category" ngModel required />
+  <br />
+  <label for="price">Price:</label>
+  <input id="price" name="price" type="number" ngModel required />
+  <br />
+  <button type="submit" [disabled]="!productForm.valid">Add Product</button>
+</form>
+<p>add-product works!</p>

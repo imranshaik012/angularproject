@@ -1,0 +1,31 @@
+<!-- <button (click)="showAddProduct = !showAddProduct">
+  {{ showAddProduct ? 'Hide Add Product' : 'Add Product' }}
+</button> -->
+<!-- <app-add-product *ngIf="showAddProduct"></app-add-product> -->
+<button (click)="showAddpro = !showAddpro">{{showAddpro ? 'Hide Add Product' : 'Add Product'}}</button>
+
+<app-product-component *ngIf="showAddpro"></app-product-component>
+
+
+<ng-container *ngIf="data && data.length; else noData">
+  <h1>Product List with filter concepts</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of data">
+        <td>{{ p.title }}</td>
+        <td>{{ p.category }}</td>
+        <td>{{ p.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #noData>
+  <p>No data available.</p>
+</ng-template>
